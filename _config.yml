@@ -67,6 +67,7 @@ index_generator:
 # Category & Tag
 default_category: uncategorized
 category_map:
+  MonoGame: monogame
 tag_map:
 
 # Metadata elements
