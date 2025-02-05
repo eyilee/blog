@@ -267,6 +267,8 @@ protected override void Update (GameTime _gameTime)
 
 ![](/images/monogame-auto-pong.gif)
 
+[AutoPong](https://github.com/eyilee/MonoGame.Samples/tree/main/AutoPong)
+
 ***
 參考資料
 - *[https://github.com/MonoGame/MonoGame.Samples/tree/3.8.2/AutoPong](https://github.com/MonoGame/MonoGame.Samples/tree/3.8.2/AutoPong)*
