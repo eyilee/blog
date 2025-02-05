@@ -4,8 +4,9 @@ date: 2025-01-24 14:51:46
 categories: MonoGame
 tags:
 ---
-本文目的主要用來記錄如何安裝 MonoGame 並發佈一個空白專案。
+本文主要用來記錄如何安裝 MonoGame 並發佈一個空白專案。
 
+<!-- more -->
 ### 安裝 Visual Studio 2022
 1. 只開發 Windows 版本的話工作負載選擇「.NET 桌面開發」即可。
 2. 如果要使用 DirectX 版本的話需要另外安裝 [DirectX End-User Runtimes (June 2010)](https://www.microsoft.com/en-us/download/details.aspx?id=8109) 因目前還不支援 DirectX 12。
