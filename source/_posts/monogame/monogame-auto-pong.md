@@ -35,7 +35,7 @@ m_Graphics = new GraphicsDeviceManager (this)
 
 Texture2D 內容可以透過程式去生成，範例在這裡 new 了一個只有 1x1 的 Texture2D 物件，並且用 **SetData** 將唯一的 pixel 設為白色，因為在之後的使用上只需要一種顏色，所以只要 1x1 的大小就可以了。
 
-除了透過程式生成，也可以使用 **Content.Load** 從資料夾中讀取圖片，函式會回傳一個 Texture2D 物件，不必再 new 一個。
+除了透過程式生成，也可以使用 Content.**Load** 從資料夾中讀取圖片，函式會回傳一個 Texture2D 物件，不必再 new 一個。
 
 {% codeblock lang:csharp %}
 public Texture2D m_Texture;
@@ -182,7 +182,7 @@ protected override void Update (GameTime _gameTime)
 ### 4. 移動方塊
 在範例中，左邊的方塊是以隨機速度跟隨著球移動的，這邊改成讓玩家來控制，右邊的方塊則維持跟隨著球。
 
-**Keyboard.GetState** 可以取得一個 KeyboardState 物件，該物件會記錄鍵盤的狀態，再透過 **IsKeyDown** 可以檢查某顆按鍵是否正被按住，當上下方向鍵被按住的時候，就讓方塊移動一段距離。
+Keyboard.**GetState** 可以取得一個 KeyboardState 物件，該物件會記錄鍵盤的狀態，再透過 **IsKeyDown** 可以檢查某顆按鍵是否正被按住，當上下方向鍵被按住的時候，就讓方塊移動一段距離。
 
 {% codeblock lang:csharp %}
 protected override void Update (GameTime _gameTime)
@@ -253,7 +253,7 @@ private void LimitPaddle (ref Rectangle _paddle)
 ### 5. 球和方塊的碰撞
 到目前為止，球跟方塊已經可以在畫面中來回的移動了，但是會直接穿過方塊，我們要讓球碰到方塊的時候可以反彈，就必須檢查兩個物體是否發生碰撞。
 
-範例使用 Intersects 函式檢查兩個 Rectangle 是否有相交，如果有相交的話代表兩個物體之間產生了碰撞，忽略了剛好接觸到的情形，因為這並不會有太大影響，所以保持原樣就可以了。
+範例使用 **Intersects** 函式檢查兩個 Rectangle 是否有相交，如果有相交的話代表兩個物體之間產生了碰撞，忽略了剛好接觸到的情形，因為這並不會有太大影響，所以保持原樣就可以了。
 
 {% codeblock lang:csharp %}
 protected override void Update (GameTime _gameTime)
