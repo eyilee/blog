@@ -1,7 +1,8 @@
 ---
 title: MonoGame 範例 NeonShooter 之 2
-categories: MonoGame
 date: 2025-05-01 15:16:08
+updated: 2025-05-01 15:16:08
+categories: MonoGame
 tags:
 ---
 
