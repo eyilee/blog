@@ -58,4 +58,8 @@
   <script src="{{ pace_js_uri }}"></script>
 {%- endif %}
 
+{%- if theme.math.katex %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+{%- endif %}
+
 {{ next_config() }}
