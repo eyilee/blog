@@ -283,7 +283,7 @@ protected override void Update (GameTime _gameTime)
 
 到這裡，我們就完成範例中主要的部份了。
 
-![](/images/monogame-auto-pong.gif)
+![](/blog/images/monogame-auto-pong.gif)
 
 [AutoPong](https://github.com/eyilee/MonoGame.Samples/tree/main/AutoPong)
 

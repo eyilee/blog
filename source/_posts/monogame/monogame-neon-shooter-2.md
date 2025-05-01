@@ -284,7 +284,9 @@ public static void Update ()
 }
 {% endcodeblock %}
 
-![](/images/monogame-neon-shooter-2.gif)
+<video controls>
+    <source src="/blog/videos/monogame-neon-shooter-2.mp4" type="video/mp4">
+</video>
 
 [NeonShooter](https://github.com/eyilee/MonoGame.Samples/tree/neon-shooter-2/NeonShooter)
 

@@ -16,7 +16,7 @@ tags:
 ### 1. 基本遊戲設定
 先設置一些基本的設定，在 `constructor` 中設定視窗的標題 `Window.Title` 為 Neon Shooter，畫面大小可以隨意設置，這邊設為 1280x720。
 
-{% codeblock lang:csharp %}
+{% codeblock Game1.cs lang:csharp %}
 public static int Width { get; private set; }
 public static int Height { get; private set; }
 
@@ -289,7 +289,7 @@ public void Update ()
 }
 {% endcodeblock %}
 
-![](/images/monogame-neon-shooter-1.gif)
+![](/blog/images/monogame-neon-shooter-1.gif)
 
 [NeonShooter](https://github.com/eyilee/MonoGame.Samples/tree/neon-shooter-1/NeonShooter)
 
