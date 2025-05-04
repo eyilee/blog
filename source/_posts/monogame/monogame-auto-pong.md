@@ -5,10 +5,10 @@ updated: 2025-02-04 11:17:17
 categories: MonoGame
 tags:
 ---
+
 本文將以官方提供的範例 [AutoPong](https://github.com/MonoGame/MonoGame.Samples/tree/3.8.2/AutoPong) 為參考資料，從零開始建立範例中的程式碼，並在內容加入一些變化。
 
 <!-- more -->
-
 ### 1. 設定畫面尺寸
 一開始要決定畫面的尺寸，寬度和高度是以像素為單位，最小的長度是 1，因此用 `int` 作為變數類型宣告 `m_Width` 和 `m_Height`，同時給定初始值。
 

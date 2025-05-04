@@ -12,9 +12,8 @@ tags:
 3. 玩家角色移動及旋轉
 
 <!-- more -->
-
 ### 1. 基本遊戲設定
-先設置一些基本的設定，在 `constructor` 中設定視窗的標題 `Window.Title` 為 Neon Shooter，畫面大小可以隨意設置，這邊設為 1280x720。
+先設置一些基本的設定，在 constructor 中設定視窗的標題 `Window.Title` 為 Neon Shooter，畫面大小可以隨意設置，這邊設為 1280x720。
 
 {% codeblock Game1.cs lang:csharp %}
 public static int Width { get; private set; }
@@ -40,7 +39,7 @@ public Game1 ()
 ### 2. 載入遊戲素材
 範例提供了遊戲素材，先將所有 NeonShooter.Core/Content 資料夾內的檔案複製到我們新建的專案底下，可以發現一個 NeonShooter.mgcb 和 Content.mgcb 檔案，MonoGame.Content.Builder.Task 預設在建置遊戲的時候會自動將所有 mgcb 檔案都執行 build，所以可以把 Content.mgcb 刪除，只使用範例提供的 NeonShooter.mgcb 就可以了。
 
-新增一個 Art.cs 檔案，宣告一個 `static class Art` 來讀取貼圖和字型，為了存取方便，所有變數也都宣告為 `public static`，貼圖的部分使用 `Texture2D`，字型的部分使用 `SpriteFont`，其中還宣告了一個 `Texture2D` 類型的變數 `Pixel`，使用 `SetData` 生成了一個 1x1 的貼圖，在範例 AutoPong 裡也使用過這個技巧，當需要畫一個純色的方塊時可以使用。
+新增一個 Art.cs，宣告一個 static class `Art` 來讀取貼圖和字型，為了存取方便，所有變數也都宣告為 public static，貼圖的部分使用 `Texture2D`，字型的部分使用 `SpriteFont`，其中還宣告了一個 `Texture2D` 類型的變數 `Pixel`，使用 `SetData` 生成了一個 1x1 的貼圖，在範例 AutoPong 裡也使用過這個技巧，當需要畫一個純色的方塊時可以使用。
 
 {% codeblock Art.cs lang:csharp %}
 using Microsoft.Xna.Framework;
@@ -49,7 +48,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace NeonShooter
 {
-    static class Art
+    public static class Art
     {
         public static Texture2D Player { get; private set; }
         public static Texture2D Seeker { get; private set; }
@@ -85,7 +84,7 @@ namespace NeonShooter
 }
 {% endcodeblock %}
 
-新增一個 Sound.cs 檔案，宣告一個 `static class Sound` 來讀取音樂和音效，`Song` 用來讀取音樂，`SoundEffect` 用來讀取音效，差別在於 `SoundEffect` 在 `Play` 的時候會產生一個 `SoundEffectInstance`，可以同時播放多次音效。
+新增一個 Sound.cs，宣告一個 static class `Sound` 來讀取音樂和音效，`Song` 用來讀取音樂，`SoundEffect` 用來讀取音效，差別在於 `SoundEffect` 在 `Play` 的時候會產生一個 `SoundEffectInstance`，可以同時播放多次音效。
 
 將音效以陣列的方式儲存，配合 getter 和 Random 的使用就可以在每次需要使用音效的時候自動隨機選擇其中一種。
 
@@ -98,7 +97,7 @@ using System.Linq;
 
 namespace NeonShooter
 {
-    static class Sound
+    public static class Sound
     {
         public static Song Music { get; private set; }
 
@@ -141,7 +140,7 @@ protected override void LoadContent ()
 {% endcodeblock %}
 
 ### 3. 建立玩家角色
-新增一個 PlayerShip.cs 檔案，宣告一個 `class PlayerShip`，這個 class 將處理玩家角色的移動、攻擊、死亡等互動，先新增一些必要的變數包含貼圖、位置、旋轉等，在 Art.`Load` 完成後傳入 `Art.Player` 初始化 `m_PlayerShip`，把玩家預設放置在畫面中間，畫面大小可以透過 `GraphicsDevice.Viewport` 取得，再加上對應的 `Draw` 函式。
+新增一個 PlayerShip.cs，宣告一個 class `PlayerShip`，這個 class 將處理玩家角色的移動、攻擊、死亡等互動，先新增一些必要的變數包含貼圖、位置、旋轉等，在 `Art.Load` 完成後傳入 `Art.Player` 初始化 `m_PlayerShip`，把玩家預設放置在畫面中間，畫面大小可以透過 `GraphicsDevice.Viewport` 取得，再加上對應的 `Draw` 函式。
 
 注意 `Draw` 函式的 `origin` 參數，文件說明這是旋轉的中心，以我的理解，旋轉都是以原點為中心，為了讓 `origin` 的點成為原點，就要位移 `-origin` 的向量，這裡傳入 `m_Size / 2f`，代表要以圖片的中心為原點，那麼畫面上圖片的最左上角的點就會是 `m_Position - m_Size / 2f`。
 
@@ -151,7 +150,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace NeonShooter
 {
-    class PlayerShip
+    public class PlayerShip
     {
         private Texture2D m_Image;
         private Vector2 m_Position = Vector2.Zero;
