@@ -281,7 +281,7 @@ public static void Update ()
 }
 {% endcodeblock %}
 
-<video controls>
+<video controls loop>
     <source src="/blog/videos/monogame-neon-shooter-2.mp4" type="video/mp4">
 </video>
 
