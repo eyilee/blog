@@ -32,7 +32,7 @@ public Game1 ()
         PreferredBackBufferHeight = m_Height
     };
 
-    ...
+    //...
 }
 {% endcodeblock %}
 
@@ -184,14 +184,14 @@ private PlayerShip m_PlayerShip;
 
 protected override void LoadContent ()
 {
-    ...
+    //...
 
     m_PlayerShip = new PlayerShip (Art.Player, new Vector2 (Width / 2f, Height / 2f), 0);
 }
 
 protected override void Draw (GameTime _gameTime)
 {
-    ...
+    //...
 
     m_SpriteBatch.Begin ();
     m_PlayerShip.Draw (m_SpriteBatch);
@@ -247,7 +247,7 @@ public void Update ()
 {% codeblock PlayerShip.cs lang:csharp %}
 public void Update ()
 {
-    ...
+    //...
 
     if (direction != Vector2.Zero && direction.LengthSquared () != 1f)
     {
@@ -265,7 +265,7 @@ public void Update ()
 {% codeblock PlayerShip.cs lang:csharp %}
 public void Update ()
 {
-    ...
+    //...
 
     MouseState mouseState = Mouse.GetState ();
 
@@ -282,7 +282,7 @@ public void Update ()
 {% codeblock PlayerShip.cs lang:csharp %}
 public void Update ()
 {
-    ...
+    //...
 
     m_Rotation = (float)Math.Atan2 (aimDirection.Y, aimDirection.X);
 }

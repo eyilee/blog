@@ -6,7 +6,6 @@ updated: 2025-05-11 20:44:29
 tags:
 ---
 
-
 這是官方範例 [NeonShooter](https://github.com/MonoGame/MonoGame.Samples/tree/3.8.2/NeonShooter) 的第三篇，本篇將完成以下部分：
 1. 敵人生成器
 2. 碰撞處理
@@ -93,7 +92,7 @@ namespace NeonShooter
 {% codeblock EnemySpawner.cs lang:csharp %}
 public static void Update ()
 {
-    ...
+    //...
 
     if (m_nInverseSpawnChance > 30f)
     {
@@ -111,7 +110,7 @@ public class Game1 : Game
 {
     public static Game1 Instance { get; private set; }
 
-    ...
+    //...
 
     private PlayerShip m_PlayerShip;
     public PlayerShip PlayerShip { get { return m_PlayerShip; } }
@@ -120,7 +119,7 @@ public class Game1 : Game
     {
         Instance = this;
 
-        ...
+        //...
     }
 }
 {% endcodeblock %}
@@ -192,18 +191,18 @@ namespace NeonShooter
 {% codeblock EnemyManager.cs lang:csharp %}
 protected override void Update (GameTime _gameTime)
 {
-    ...
+    //...
 
     m_PlayerShip.Update ();
     EnemyManager.Update ();
     BulletManager.Update ();
 
-    ...
+    //...
 }
 
 protected override void Draw (GameTime _gameTime)
 {
-    ...
+    //...
 
     m_SpriteBatch.Begin ();
     m_PlayerShip.Draw (m_SpriteBatch);
@@ -211,7 +210,7 @@ protected override void Draw (GameTime _gameTime)
     BulletManager.Draw (m_SpriteBatch);
     m_SpriteBatch.End ();
 
-    ...
+    //...
 }
 {% endcodeblock %}
 
@@ -231,14 +230,14 @@ public static void Update ()
 {% codeblock EnemyManager.cs lang:csharp %}
 protected override void Update (GameTime _gameTime)
 {
-    ...
+    //...
 
     m_PlayerShip.Update ();
     EnemySpawner.Update ();
     EnemyManager.Update ();
     BulletManager.Update ();
 
-    ...
+    //...
 }
 {% endcodeblock %}
 
@@ -252,59 +251,59 @@ protected override void Update (GameTime _gameTime)
 先將物件都加上半徑。
 
 {% codeblock PlayerShip.cs lang:csharp %}
-...
+//...
 private Vector2 m_Size = Vector2.Zero;
 private float m_Radius = 0f;
 private float m_Scale = 1f;
 
-...
+//...
 public Vector2 Size { get { return m_Size; } }
 public float Radius { get { return m_Radius; } }
 
 public PlayerShip (Texture2D _image, Vector2 _position, float _rotation)
 {
-    ...
+    //...
     m_Radius = MathF.Sqrt (m_Size.X * m_Size.X + m_Size.Y * m_Size.Y) / 2f;
 }
 {% endcodeblock %}
 
 {% codeblock Bullet.cs lang:csharp %}
-...
+//...
 using System;
 
-...
+//...
 private float m_Radius = 0f;
 private float m_Scale = 1f;
 private bool m_IsExpired = false;
 
-...
+//...
 public Vector2 Size { get { return m_Size; } }
 public float Radius { get { return m_Radius; } }
 
 public Bullet (Texture2D _image, Vector2 _position, Vector2 _velocity, float _rotation)
 {
-    ...
+    //...
     m_Radius = MathF.Sqrt (m_Size.X * m_Size.X + m_Size.Y * m_Size.Y) / 2f;
 }
 {% endcodeblock %}
 
 {% codeblock Enemy.cs lang:csharp %}
-...
+//...
 using System;
 
-...
+//...
 private float m_Radius = 0f;
 private float m_Scale = 1f;
 private bool m_IsExpired = false;
 
-...
+//...
 public Vector2 Size { get { return m_Size; } }
 public float Radius { get { return m_Radius; } }
 public bool IsExpired { get { return m_IsExpired; } }
 
 public Enemy (Texture2D _image, Vector2 _position, Vector2 _velocity, float _rotation)
 {
-    ...
+    //...
     m_Radius = MathF.Sqrt (m_Size.X * m_Size.X + m_Size.Y * m_Size.Y) / 2f;
 }
 {% endcodeblock %}
@@ -326,12 +325,12 @@ public static List<Enemy> EnemyList {  get { return m_EnemyList; } }
 {% codeblock Game1.cs lang:csharp %}
 protected override void Update (GameTime _gameTime)
 {
-    ...
+    //...
 
     HandleCollision ();
 
     m_PlayerShip.Update ();
-    ...
+    //...
 }
 
 void HandleCollision ()
@@ -377,12 +376,12 @@ public void Kill ()
 {% codeblock Game1.cs lang:csharp %}
 void HandleCollision ()
 {
-    ...
+    //...
     if (Vector2.DistanceSquared (enemy.Position, m_PlayerShip.Position) < radius * radius)
     {
         m_PlayerShip.Kill ();
     }
-    ...
+    //...
 }
 
 public void Reset ()
@@ -431,13 +430,13 @@ public void Reset ()
 {% codeblock Game1.cs lang:csharp %}
 void HandleCollision ()
 {
-    ...
+    //...
     if (Vector2.DistanceSquared (enemy.Position, bullet.Position) < radius * radius)
     {
         enemy.Kill ();
         bullet.Kill ();
     }
-    ...
+    //...
 }
 {% endcodeblock %}
 
@@ -457,7 +456,7 @@ public void Reset ()
 {
     m_PlayerShip.Reset ();
 
-    ...
+    //...
 }
 {% endcodeblock %}
 

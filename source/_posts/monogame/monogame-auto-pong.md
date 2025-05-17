@@ -44,7 +44,7 @@ public Texture2D m_Texture;
 
 protected override void LoadContent ()
 {
-    ...
+    //...
 
     m_Texture = new Texture2D (m_Graphics.GraphicsDevice, 1, 1);
     m_Texture.SetData ([Color.White]);
@@ -65,7 +65,7 @@ private Rectangle m_Ball;
 
 protected override void LoadContent ()
 {
-    ...
+    //...
 
     m_PaddleLeft = new Rectangle (0 + 10, m_Height / 2 - 50, 20, 100);
     m_PaddleRight = new Rectangle (m_Width - 30, m_Height / 2 - 50, 20, 100);
@@ -109,7 +109,7 @@ private float m_BallSpeed = 15.0f;
 
 protected override void LoadContent ()
 {
-    ...
+    //...
 
     m_BallPosition = new Vector2 (m_Ball.X, m_Ball.Y);
     m_BallVelocity = new Vector2 (1.0f, 0.1f);
@@ -121,7 +121,7 @@ protected override void LoadContent ()
 {% codeblock lang:csharp %}
 protected override void Update (GameTime _gameTime)
 {
-    ...
+    //...
 
     m_BallPosition.X += m_BallVelocity.X * m_BallSpeed;
     m_BallPosition.Y += m_BallVelocity.Y * m_BallSpeed;
@@ -135,13 +135,13 @@ protected override void Update (GameTime _gameTime)
 {% codeblock lang:csharp %}
 protected override void Draw (GameTime _gameTime)
 {
-    ...
+    //...
 
     m_Ball.X = (int)m_BallPosition.X;
     m_Ball.Y = (int)m_BallPosition.Y;
     m_SpriteBatch.Draw (m_Texture, new Vector2 (m_Ball.X, m_Ball.Y), m_Ball, Color.White, 0, Vector2.Zero, 1.0f, SpriteEffects.None, 0.00001f);
 
-    ...
+    //...
 }
 {% endcodeblock %}
 
@@ -150,7 +150,7 @@ protected override void Draw (GameTime _gameTime)
 {% codeblock lang:csharp %}
 protected override void Update (GameTime _gameTime)
 {
-    ...
+    //...
 
     m_BallPosition.X += m_BallVelocity.X * m_BallSpeed;
     m_BallPosition.Y += m_BallVelocity.Y * m_BallSpeed;
@@ -177,7 +177,7 @@ protected override void Update (GameTime _gameTime)
         m_BallVelocity.Y *= -1;
     }
 
-    ...
+    //...
 }
 {% endcodeblock %}
 
@@ -189,7 +189,7 @@ protected override void Update (GameTime _gameTime)
 {% codeblock lang:csharp %}
 protected override void Update (GameTime _gameTime)
 {
-    ...
+    //...
 
     KeyboardState keyboardState = Keyboard.GetState ();
     if (keyboardState.IsKeyDown (Keys.Up))
@@ -201,7 +201,7 @@ protected override void Update (GameTime _gameTime)
         m_PaddleLeft.Y += 8;
     }
 
-    ...
+    //...
 }
 {% endcodeblock %}
 
@@ -210,7 +210,7 @@ protected override void Update (GameTime _gameTime)
 {% codeblock lang:csharp %}
 protected override void Update (GameTime _gameTime)
 {
-    ...
+    //...
 
     int paddleCenter = m_PaddleRight.Y + m_PaddleRight.Height / 2;
     if (paddleCenter < m_BallPosition.Y - 10)
@@ -222,7 +222,7 @@ protected override void Update (GameTime _gameTime)
         m_PaddleRight.Y += (int)((m_BallPosition.Y - paddleCenter) * 0.1f);
     }
 
-    ...
+    //...
 }
 {% endcodeblock %}
 
@@ -231,12 +231,12 @@ protected override void Update (GameTime _gameTime)
 {% codeblock lang:csharp %}
 protected override void Update (GameTime _gameTime)
 {
-    ...
+    //...
 
     LimitPaddle (ref m_PaddleLeft);
     LimitPaddle (ref m_PaddleRight);
 
-    ...
+    //...
 }
 
 private void LimitPaddle (ref Rectangle _paddle)
@@ -260,7 +260,7 @@ private void LimitPaddle (ref Rectangle _paddle)
 {% codeblock lang:csharp %}
 protected override void Update (GameTime _gameTime)
 {
-    ...
+    //...
 
     m_BallPosition.X += m_BallVelocity.X * m_BallSpeed;
     m_BallPosition.Y += m_BallVelocity.Y * m_BallSpeed;
@@ -277,7 +277,7 @@ protected override void Update (GameTime _gameTime)
         m_BallPosition.X = m_PaddleRight.X - 10;
     }
 
-    ...
+    //...
 }
 {% endcodeblock %}
 

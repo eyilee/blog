@@ -54,14 +54,14 @@ namespace NeonShooter
 我們在 class `PlayerShip` 新增兩個 `int` 變數 `m_CooldownFrames` 和 `m_CooldownRemaining`，`m_CooldownFrames` 代表每幾次 `Update` 要發射一次子彈，會是個固定的值，因此可以宣告為 `const`。
 
 {% codeblock PlayerShip.cs lang:csharp %}
-...
+//...
 private float m_Scale = 1f;
 
 private const int m_CooldownFrames = 6;
 private int m_CooldownRemaining = 0;
 
 public Vector2 Position { get { return m_Position; } }
-...
+//...
 {% endcodeblock %}
 
 在 `Update` 函式中加入對 `m_CooldownRemaining` 的處理，當 `m_CooldownRemaining` 等於 0 的時候要生成一個 `Bullet` 並且將值重設為 `m_CooldownFrames`，最後無論有無發射子彈每次 `Update` 都要將 `m_CooldownRemaining` 減一。
@@ -69,7 +69,7 @@ public Vector2 Position { get { return m_Position; } }
 {% codeblock PlayerShip.cs lang:csharp %}
 public void Update ()
 {
-    ...
+    //...
 
     m_Rotation = (float)Math.Atan2 (aimDirection.Y, aimDirection.X);
 
@@ -124,7 +124,7 @@ namespace NeonShooter
 {% codeblock PlayerShip.cs lang:csharp %}
 public void Update ()
 {
-    ...
+    //...
 
     if (m_CooldownRemaining == 0)
     {
@@ -133,21 +133,21 @@ public void Update ()
         m_CooldownRemaining = m_CooldownFrames;
     }
 
-    ...
+    //...
 }
 {% endcodeblock %}
 
 {% codeblock Game1.cs lang:csharp %}
 protected override void Draw (GameTime _gameTime)
 {
-    ...
+    //...
 
     m_SpriteBatch.Begin ();
     m_PlayerShip.Draw (m_SpriteBatch);
     BulletManager.Draw (m_SpriteBatch);
     m_SpriteBatch.End ();
 
-    ...
+    //...
 }
 {% endcodeblock %}
 
@@ -158,7 +158,7 @@ protected override void Draw (GameTime _gameTime)
 {% codeblock PlayerShip.cs lang:csharp %}
 public void Update ()
 {
-    ...
+    //...
 
     if (m_CooldownRemaining == 0)
     {
@@ -170,7 +170,7 @@ public void Update ()
         m_CooldownRemaining = m_CooldownFrames;
     }
 
-    ...
+    //...
 }
 {% endcodeblock %}
 
@@ -180,11 +180,11 @@ public void Update ()
 在 class `Bullet` 宣告一個 `Vector2` 變數 `m_Velocity` 代表子彈速度的向量，每次 `Update` 時會根據這個值做位移。
 
 {% codeblock Bullet.cs lang:csharp %}
-...
+//...
 private Vector2 m_Position = Vector2.Zero;
 private Vector2 m_Velocity = Vector2.Zero;
 private Color m_Color = Color.White;
-...
+//...
 
 public Bullet (Texture2D _image, Vector2 _position, Vector2 _velocity, float _rotation)
 {
@@ -206,7 +206,7 @@ public void Update ()
 {% codeblock PlayerShip.cs lang:csharp %}
 public void Update ()
 {
-    ...
+    //...
 
     if (m_CooldownRemaining == 0)
     {
@@ -218,7 +218,7 @@ public void Update ()
         m_CooldownRemaining = m_CooldownFrames;
     }
 
-    ...
+    //...
 }
 {% endcodeblock %}
 
@@ -237,12 +237,12 @@ public static void Update ()
 {% codeblock Game1.cs lang:csharp %}
 protected override void Update (GameTime _gameTime)
 {
-    ...
+    //...
 
     m_PlayerShip.Update ();
     BulletManager.Update ();
 
-    ...
+    //...
 }
 {% endcodeblock %}
 
@@ -251,15 +251,15 @@ protected override void Update (GameTime _gameTime)
 因為沒辦法在 `Update` 的同時移除掉子彈，宣告一個 `bool` 變數 `m_IsExpired`，當超出畫面以後就設為 `true`，在 class `BulletManager` 中 `Update` 結束時將 `m_IsExpired` 等於 `true` 的子彈從清單中移除。
 
 {% codeblock Bullet.cs lang:csharp %}
-...
+//...
 private float m_Scale = 1f;
 private bool m_IsExpired = false;
 
-...
+//...
 public Vector2 Size { get { return m_Size; } }
 public bool IsExpired { get { return m_IsExpired; } }
 
-...
+//...
 
 public void Update ()
 {
@@ -275,7 +275,7 @@ public void Update ()
 {% codeblock BulletManager.cs lang:csharp %}
 public static void Update ()
 {
-    ...
+    //...
     
     m_BulletList.RemoveAll (x => x.IsExpired);
 }
