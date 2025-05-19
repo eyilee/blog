@@ -67,6 +67,7 @@ index_generator:
 # Category & Tag
 default_category: uncategorized
 category_map:
+  2D Physics: 2d physics
   MonoGame: monogame
 tag_map:
 
