@@ -1,6 +1,8 @@
 ---
 title: 2D 碰撞檢測包圍盒
 categories: 2D Physics
+date: 2025-05-24 21:23:07
+updated: 2025-05-24 21:23:07
 tags:
 ---
 
@@ -14,12 +16,12 @@ tags:
 
 <!-- more -->
 ### 1. AABB(Axis-Aligned Bounding Box)
-AABB 顧名思義就是按照和座標軸對齊的包圍盒，四個邊都會和座標軸對齊，因此只需要對角的兩個頂點就可以記錄一個 AABB 包圍盒，如下圖。
+AABB 顧名思義就是按照和座標軸對齊的包圍盒，四個邊都會和座標軸對齊，因此只需要圖形在座標軸上的極大值與極小值就可以生成一個 AABB，如下圖。
 
 ![](/blog/images/AABB.jpg)
-> 藍色三角形的 AABB 包圍盒就是紅色矩形。
+> 藍色三角形的 AABB 就是紅色矩形。
 
-兩個 AABB 包圍盒的碰撞檢測也很簡單，兩個包圍盒在每一個座標軸上的投影都會產生重疊，如下圖。
+AABB 的碰撞檢測也很簡單，兩個圖形在每一個座標軸上的投影都會產生重疊，如下圖。
 
 ![](/blog/images/AABB-collision.jpg)
 > 橘色線段即兩包圍盒在座標軸上重疊的部分。
@@ -29,10 +31,16 @@ AABB 顧名思義就是按照和座標軸對齊的包圍盒，四個邊都會和
 AABB 在碰撞檢測的計算上十分快速，但有一個缺點，因為四個邊都是和座標軸對齊的，一旦圖形產生旋轉，頂點無法直接同時旋轉使用，必須重新計算新的頂點。
 
 ### 2. OBB(Oriented Bounding Box)
+OBB 定向包圍盒，和 AABB 相似，包圍盒的形狀都是一個矩形，但是具有方向性，可以旋轉，生成的方式較 AABB 複雜，會先透過如 PCA(Principle Component Analysis) 等演算法找到適合的軸線，再計算圖形在座標軸上的極大值與極小值，如下圖。
 
+![](/blog/images/OBB.jpg)
+> 若以兩灰色軸線為 XY 軸，那就是一個 AABB。
+
+OBB 的碰撞檢測更加複雜，由於圖形經過了旋轉，AABB 的檢測方法並不能滿足需求，就需要用到 SAT(Separating Axis Theorem)、GJK(Gilbert–Johnson–Keerthi) 等演算法，計算上的開銷比起 AABB 較大，因此 OBB 較適合使用在 Narrow-Phase 而不是 Broad-Phase。
 
 ***
 參考資料
-- *[Bounding volumee](https://en.wikipedia.org/wiki/Bounding_volume)*
+- *[Bounding volume](https://en.wikipedia.org/wiki/Bounding_volume)*
 - *[游戏物理引擎(二) 碰撞检测之Broad-Phase](https://zhuanlan.zhihu.com/p/113415779)*
 - *[现代游戏物理引擎入门(三)——碰撞检测(上)](https://zhuanlan.zhihu.com/p/396719279)*
+- *[OBB（Oriented Bounding Bix，定向包容盒）](https://zhuanlan.zhihu.com/p/577089574)*

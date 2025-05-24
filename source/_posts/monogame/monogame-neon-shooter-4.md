@@ -6,7 +6,6 @@ updated: 2025-05-18 21:54:38
 tags:
 ---
 
-
 這是官方範例 [NeonShooter](https://github.com/MonoGame/MonoGame.Samples/tree/3.8.2/NeonShooter) 的第四篇，本篇將完成以下部分：
 1. 整理現有程式碼
 2. 新增敵人種類與行動模式
