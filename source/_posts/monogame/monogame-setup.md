@@ -30,4 +30,4 @@ tags:
 
 ***
 參考資料
-- *[https://docs.monogame.net/articles/getting_started/index.html](https://docs.monogame.net/articles/getting_started/index.html)*
+- *[Getting Started](https://docs.monogame.net/articles/getting_started/index.html)*

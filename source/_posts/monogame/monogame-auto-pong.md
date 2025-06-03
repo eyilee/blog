@@ -6,7 +6,12 @@ categories: MonoGame
 tags:
 ---
 
-本文將以官方提供的範例 [AutoPong](https://github.com/MonoGame/MonoGame.Samples/tree/3.8.2/AutoPong) 為參考資料，從零開始建立範例中的程式碼，並在內容加入一些變化。
+本文將以官方提供的範例 [AutoPong](https://github.com/MonoGame/MonoGame.Samples/tree/3.8.2/AutoPong) 為參考資料，從零開始建立範例中的程式碼，並在內容加入一些變化，將包含以下部分：
+1. 設定畫面尺寸
+2. 製作球和方塊
+3. 移動球
+4. 移動方塊
+5. 球和方塊的碰撞
 
 <!-- more -->
 ### 1. 設定畫面尺寸
@@ -286,7 +291,3 @@ protected override void Update (GameTime _gameTime)
 ![](/blog/images/monogame-auto-pong.gif)
 
 [AutoPong](https://github.com/eyilee/MonoGame.Samples/tree/main/AutoPong)
-
-***
-參考資料
-- *[https://github.com/MonoGame/MonoGame.Samples/tree/3.8.2/AutoPong](https://github.com/MonoGame/MonoGame.Samples/tree/3.8.2/AutoPong)*

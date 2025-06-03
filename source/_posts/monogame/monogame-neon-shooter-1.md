@@ -291,7 +291,3 @@ public void Update ()
 ![](/blog/images/monogame-neon-shooter-1.gif)
 
 [NeonShooter](https://github.com/eyilee/MonoGame.Samples/tree/neon-shooter-1/NeonShooter)
-
-***
-參考資料
-- *[https://github.com/MonoGame/MonoGame.Samples/tree/3.8.2/NeonShooter](https://github.com/MonoGame/MonoGame.Samples/tree/3.8.2/NeonShooter)*

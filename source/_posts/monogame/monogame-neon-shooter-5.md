@@ -179,11 +179,10 @@ protected override void Draw (GameTime _gameTime)
 
 ***
 參考資料
-- *[https://github.com/MonoGame/MonoGame.Samples/tree/3.8.2/NeonShooter](https://github.com/MonoGame/MonoGame.Samples/tree/3.8.2/NeonShooter)*
-- *[https://github.com/SimonDarksideJ/XNAGameStudio/wiki/Bloom-Postprocess](https://github.com/SimonDarksideJ/XNAGameStudio/wiki/Bloom-Postprocess)*
+- *[Bloom-Postprocess](https://github.com/SimonDarksideJ/XNAGameStudio/wiki/Bloom-Postprocess)*
 - *[Class DrawableGameComponent](https://docs.monogame.net/api/Microsoft.Xna.Framework.DrawableGameComponent.html)*
 - *[Class Effect](https://docs.monogame.net/api/Microsoft.Xna.Framework.Graphics.Effect.html)*
-- *[What Is a Configurable Effect?](https://docs.monogame.net/articles/getting_to_know/whatis/graphics/WhatIs_ConfigurableEffect.html     )*
+- *[What Is a Configurable Effect?](https://docs.monogame.net/articles/getting_to_know/whatis/graphics/WhatIs_ConfigurableEffect.html)*
 - *[What Is a Render Target?](https://docs.monogame.net/articles/getting_to_know/whatis/graphics/WhatIs_Render_Target.html)*
 - *[When does XNA discard Render Target contents?](https://stackoverflow.com/questions/6897889/when-does-xna-discard-render-target-contents)*
 - *[What Is Sampler State?](https://docs.monogame.net/articles/getting_to_know/whatis/graphics/WhatIs_Sampler.html)*
