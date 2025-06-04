@@ -510,7 +510,7 @@ public class Enemy : Entity
 
     public Enemy (Texture2D _image, Vector2 _position, Vector2 _velocity, float _rotation)
     {
-        ...
+        //...
 
         m_Behaviour = ChasePlayer ();
     }
@@ -559,7 +559,7 @@ public class Enemy : Entity
         }
     }
 
-    ...
+    //...
 }
 {% endcodeblock %}
 
@@ -663,7 +663,7 @@ public static void Update ()
         EntityManager.AddEntity (Enemy.CreateWanderer (GetSpawnPosition (), Vector2.Zero, 0f));
     }
 
-    ...
+    //...
 }
 {% endcodeblock %}
 

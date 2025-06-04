@@ -100,7 +100,7 @@ public void BeginDraw()
 
 {% codeblock BloomComponent.cs lang:csharp %}
 GraphicsDevice.SamplerStates[1] = SamplerState.LinearClamp;
-...
+//...
 GraphicsDevice.Textures[1] = sceneRenderTarget;
 {% endcodeblock %}
 
@@ -140,11 +140,11 @@ private GraphicsDeviceManager m_Graphics;
 private SpriteBatch m_SpriteBatch;
 private BloomComponent m_BloomComponent;
 
-...
+//...
 
 public Game1 ()
 {
-    ...
+    //...
 
     m_BloomComponent = new BloomComponent (this);
     Components.Add (m_BloomComponent);
@@ -155,7 +155,7 @@ public Game1 ()
     IsMouseVisible = true;
 }
 
-...
+//...
 
 protected override void Draw (GameTime _gameTime)
 {
@@ -163,7 +163,7 @@ protected override void Draw (GameTime _gameTime)
 
     GraphicsDevice.Clear (Color.CornflowerBlue);
 
-    ...
+    //...
 
     base.Draw (_gameTime);
 }
