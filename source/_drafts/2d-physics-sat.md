@@ -13,7 +13,7 @@ SAT 的原理應出自對 Hyperplane separation theorem 的推導，該理論認
 
 實際來看些例子，從最簡單的兩個矩形開始，可以看到左邊不相交的矩形可以被線條 A 分開，分離軸是 X 軸，在 X 軸上的投影也沒有重疊，右邊相交的矩形則是在 XY 軸上的投影都產生了重疊。
 
-![](/blog/images/SAT-AABB.jpg)
+![](/blog/images/SAT-AABB.png)
 
 那麼問題來了，要如何找到分離軸？為何只要判斷 XY 軸上的投影都產生重疊就可以認定矩形相交了呢？
 
