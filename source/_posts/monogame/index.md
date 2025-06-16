@@ -41,3 +41,7 @@ tags:
 5. {% post_link monogame/monogame-neon-shooter-5 %}
     * 理解 BloomComponent
     * 加入 Bloom 特效
+6. {% post_link monogame/monogame-neon-shooter-6 %}
+    * 加入粒子效果
+    * 加入拖尾效果
+    * 加入爆炸效果

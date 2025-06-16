@@ -268,7 +268,7 @@ namespace NeonShooter
 
 需要注意的是在 `Update` 中，範例是將已經結束的粒子一步一步的交換至尾端，這裡改成與頭部的粒子交換，全部粒子都更新完畢以後再更新 `Start` 跟 `Count`。
 
-別忘了在 `Game1` 中加入 ParticleManager，由於後面粒子的貼圖需要疊加顯示所以 `SpriteBatch.Begin` 的參數要改成 `BlendState.Additive`，代表渲染時後面畫的顏色會根據 alpha 值與已渲染的顏色疊加。
+別忘了在 `Game1` 中加入 ParticleManager，由於後面粒子的貼圖需要疊加顯示所以 `SpriteBatch.Begin` 的參數要改成 `BlendState.Additive`，代表渲染時後面畫的顏色會與已渲染的顏色疊加。
 
 {% codeblock Game1.cs lang:csharp %}
 protected override void Update (GameTime _gameTime)
