@@ -1,7 +1,7 @@
 ---
 title: 安裝並發佈一個 MonoGame 空白專案
 date: 2025-01-24 14:51:46
-updated: 2025-01-24 14:51:46
+updated: 2025-06-19 10:59:39
 categories: MonoGame
 tags:
 ---
@@ -16,7 +16,9 @@ tags:
 
 ### 安裝延伸模組
 1. 啟動 Visual Studio 以後選擇「不使用程式碼繼續」。
-2. 在上方功能列「延伸模組」→「管理延伸模組」，搜尋 MonoGame 找到「MonoGame Framework C# project templates」安裝後並重新啟動 Visual Studio‧
+2. ~~在上方功能列「延伸模組」→「管理延伸模組」，搜尋 MonoGame 找到「MonoGame Framework C# project templates」安裝後並重新啟動 Visual Studio‧~~
+
+> 在 3.8.4 版本後，延伸模組已經失效，改為使用 dotnet cli 安裝，先移除延伸模組，然後在 cmd 輸入 `dotnet new install MonoGame.Templates.CSharp` 即可。
 
 ### 建立專案
 1. 啟動 Visual Studio 選擇「建立新的專案」，找到「MonoGame Cross-Platform Desktop Application」這是使用 OpenGL 的版本，如果要用 DirectX 則選擇「MonoGame Windows Desktop Application」。
