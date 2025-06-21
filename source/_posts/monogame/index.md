@@ -45,3 +45,6 @@ tags:
     * 加入粒子效果
     * 加入拖尾效果
     * 加入爆炸效果
+7. {% post_link monogame/monogame-neon-shooter-7 %}
+    * 加入黑洞
+    * 加入粒子
