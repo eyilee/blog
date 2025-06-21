@@ -6,7 +6,6 @@ updated: 2025-06-01 23:23:04
 tags:
 ---
 
-
 這是官方範例 [NeonShooter](https://github.com/MonoGame/MonoGame.Samples/tree/3.8.2/NeonShooter) 的第五篇，本篇將完成以下部分：
 1. 理解 BloomComponent
 2. 加入 Bloom 特效

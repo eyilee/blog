@@ -6,7 +6,6 @@ updated: 2025-06-15 12:33:58
 tags:
 ---
 
-
 這是官方範例 [NeonShooter](https://github.com/MonoGame/MonoGame.Samples/tree/3.8.2/NeonShooter) 的第六篇，本篇將完成以下部分：
 1. 加入粒子效果
 2. 加入拖尾效果
