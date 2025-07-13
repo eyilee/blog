@@ -48,3 +48,6 @@ tags:
 7. {% post_link monogame/monogame-neon-shooter-7 %}
     * 加入黑洞
     * 加入粒子
+8. {% post_link monogame/monogame-neon-shooter-8 %}
+    * 加入引力線
+    * 施加引力
