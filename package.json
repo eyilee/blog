@@ -24,6 +24,6 @@
     "hexo-server": "^3.0.0",
     "hexo-theme-landscape": "^1.0.0",
     "hexo-theme-next": "^8.27.0",
-    "katex": "^0.16.27"
+    "katex": "^0.16.44"
   }
 }
